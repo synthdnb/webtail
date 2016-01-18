@@ -18,7 +18,7 @@ module WebSocket
 
   # return unused port
   def port
-    @port ||= begin
+    @port = Webtail.config[:websocket_port] || begin
       s = ::TCPServer.open(0)
       port = s.addr[1]
       s.close
