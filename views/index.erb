@@ -9,6 +9,7 @@
     <script type="text/javascript" src="/js/tinycon.js"></script>
     <script type="text/javascript" src="/js/webtail.js"></script>
     <script type="text/javascript">
+      Webtail.hostname = "<%= @hostname %>"
       <% if @webtailrc %>
       Webtail.onmessages.push(function(message, context) {
         <%= @webtailrc %>

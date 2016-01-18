@@ -2,7 +2,7 @@ var Webtail = {
   run: function(port) {
     var self = this;
     jQuery(function($) {
-      var socket = new (WebSocket || MozWebSocket)('ws://localhost:' + port);
+      var socket = new (WebSocket || MozWebSocket)("ws://" + Webtail.hostname + ":" + port);
       var context = {};
       socket.onmessage = function(message) {
           $.each(self.onmessages, function() { this(message, context) });

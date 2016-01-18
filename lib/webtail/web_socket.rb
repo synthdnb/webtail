@@ -9,7 +9,7 @@ module WebSocket
       logs.shift if logs.size > LOG_SIZE
     end
 
-    EM::WebSocket.start(:host => "127.0.0.1", :port => port) do |socket|
+    EM::WebSocket.start(:host => "0.0.0.0", :port => port) do |socket|
       socket.onopen(&onopen(socket))
       socket.onmessage(&onmessage)
       socket.onerror(&onerror)
